@@ -198,6 +198,9 @@ export default class NodeContainer {
         this.bounds = IS_INPUT
             ? reformatInputBounds(parseBounds(node, scrollX, scrollY))
             : parseBounds(node, scrollX, scrollY);
+        if (scrollY && !this.parent) {
+            this.bounds.height = this.bounds.height + scrollY;
+        }
         this.curvedBounds = parseBoundCurves(
             this.bounds,
             this.style.border,

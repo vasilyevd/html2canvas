@@ -147,7 +147,7 @@ export const renderElement = (
                               height:
                                   typeof options.height === 'number'
                                       ? options.height
-                                      : Math.ceil(height)
+                                      : Math.ceil(height) - options.y
                           };
 
                           if (Array.isArray(options.target)) {
